@@ -1,0 +1,43 @@
+[
+    {
+      "name": "Alice Johnson",
+      "grade": "A",
+      "availability": [
+        { "startTime": "2025-02-03T09:00:00Z", "endTime": "2025-02-03T12:00:00Z" },
+        { "startTime": "2025-02-05T14:00:00Z", "endTime": "2025-02-05T17:00:00Z" }
+      ]
+    },
+    {
+      "name": "Bob Smith",
+      "grade": "B",
+      "availability": [
+        { "startTime": "2025-02-04T08:00:00Z", "endTime": "2025-02-04T10:30:00Z" },
+        { "startTime": "2025-02-06T13:00:00Z", "endTime": "2025-02-06T16:00:00Z" }
+      ]
+    },
+    {
+      "name": "Charlie Davis",
+      "grade": "C",
+      "availability": [
+        { "startTime": "2025-02-02T15:00:00Z", "endTime": "2025-02-02T18:00:00Z" },
+        { "startTime": "2025-02-07T09:30:00Z", "endTime": "2025-02-07T12:30:00Z" }
+      ]
+    },
+    {
+      "name": "Diana Lee",
+      "grade": "A",
+      "availability": [
+        { "startTime": "2025-02-05T10:00:00Z", "endTime": "2025-02-05T12:00:00Z" },
+        { "startTime": "2025-02-08T14:30:00Z", "endTime": "2025-02-08T17:30:00Z" }
+      ]
+    },
+    {
+      "name": "Ethan Martinez",
+      "grade": "B",
+      "availability": [
+        { "startTime": "2025-02-03T08:30:00Z", "endTime": "2025-02-03T11:30:00Z" },
+        { "startTime": "2025-02-06T12:00:00Z", "endTime": "2025-02-06T15:00:00Z" }
+      ]
+    }
+  ]
+  
