@@ -1,81 +1,24 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import styled from "@emotion/styled";
 import { Button, CircularProgress } from "@mui/material";
+import Tabs from "../components/Tabs";
+import { useWebSocketChat } from "../hooks/useWebSocketChat";
 
 export default function Chat() {
   const [prompt, setPrompt] = useState("");
-  const [response, setResponse] = useState<string>("");
-  const [prevResponses, setPrevResponses] = useState<string[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const wsRef = useRef<WebSocket | null>(null);
-  const tempResponseRef = useRef<string>("");
 
-  useEffect(() => {
-    wsRef.current = new WebSocket("ws://localhost:3002");
+  const { response, prevResponses, loading, error, sendMessage } =
+    useWebSocketChat("ws://localhost:3002");
 
-    wsRef.current.onopen = () => {
-      console.log("Connected to WebSocket server");
-    };
-
-    wsRef.current.onmessage = (event) => {
-      const data = JSON.parse(event.data);
-      console.log("data", data);
-
-      if (data.chunk) {
-        // Append streamed text to the temporary response
-        tempResponseRef.current += data.chunk;
-        setResponse((prev) => prev + data.chunk); // Append streamed text
-      } else if (data.end) {
-        setLoading(false);
-        console.log("temp response current", tempResponseRef.current);
-
-        // Capture the value before resetting tempResponseRef.current
-        const finalResponse = tempResponseRef.current;
-        tempResponseRef.current = ""; // Reset after capturing
-        setResponse("");
-
-        // Ensure we add the captured value
-        setPrevResponses((prev) => [...prev, finalResponse]);
-      } else if (data.error) {
-        setError(data.error);
-        setLoading(false);
-      }
-    };
-
-    wsRef.current.onerror = (event) => {
-      console.error("WebSocket error:", event);
-      setError("WebSocket connection error.");
-      setLoading(false);
-    };
-
-    wsRef.current.onclose = () => {
-      console.log("WebSocket disconnected");
-    };
-
-    return () => {
-      wsRef.current?.close();
-    };
-  }, []);
-
-  useEffect(() => {
-    console.log("prev responses", prevResponses)
-  }, [prevResponses]);
-
-
-  const onSend = (e: any) => {
+  const onSend = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!prompt.trim() || !wsRef.current) return;
-
-    setResponse("");
-    setError(null);
-    setLoading(true);
-
-    wsRef.current.send(JSON.stringify({ prompt }));
+    sendMessage(prompt);
+    setPrompt(""); // Clear input after sending
   };
 
   return (
     <Wrapper onSubmit={onSend}>
+      <Tabs />
       {!prevResponses.length && !response ? (
         <Greetings>
           Hello, I am the scheduling agent,
@@ -95,7 +38,11 @@ export default function Chat() {
               {r}
             </ResponseBox>
           ))}
-          {response && <ResponseBox style={{borderTop: "1px solid #fff"}}>{response}</ResponseBox>}
+          {response && (
+            <ResponseBox style={{ borderTop: "1px solid #fff" }}>
+              {response}
+            </ResponseBox>
+          )}
         </ResponseWrapper>
       )}
       <InputWrapper>

@@ -1,34 +1,39 @@
 [
     {
-      "customerName": "John Doe",
+      "appointment_id": "1111",
+      "customer_name": "John Doe",
       "address": "123 Main St, Springfield, IL",
       "lat": 39.7817,
       "lng": -89.6501,
-      "appointmentTime": "2025-02-02T10:00:00Z"
+      "appointmentTime": "2025-02-05T10:00:00Z"
     },
     {
-      "customerName": "Jane Smith",
+      "appointment_id": "2222",
+      "customer_name": "Jane Smith",
       "address": "456 Elm St, Austin, TX",
       "lat": 30.2672,
       "lng": -97.7431,
       "appointmentTime": "2025-02-02T14:30:00Z"
     },
     {
-      "customerName": "Robert Johnson",
+      "appointment_id": "3333",
+      "customer_name": "Robert Johnson",
       "address": "789 Oak Ave, Denver, CO",
       "lat": 39.7392,
       "lng": -104.9903,
       "appointmentTime": "2025-02-02T16:00:00Z"
     },
     {
-      "customerName": "Emily Davis",
+      "appointment_id": "4444",
+      "customer_name": "Emily Davis",
       "address": "101 Pine St, Seattle, WA",
       "lat": 47.6062,
       "lng": -122.3321,
       "appointmentTime": "2025-02-02T09:45:00Z"
     },
     {
-      "customerName": "Michael Brown",
+      "appointment_id": "5555",
+      "customer_name": "Michael Brown",
       "address": "202 Cedar Ln, Miami, FL",
       "lat": 25.7617,
       "lng": -80.1918,

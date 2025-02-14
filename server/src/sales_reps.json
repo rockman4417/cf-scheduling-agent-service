@@ -1,6 +1,7 @@
 [
     {
       "name": "Alice Johnson",
+      "email": "aj@momentumsolar.com",
       "grade": "A",
       "availability": [
         { "startTime": "2025-02-03T09:00:00Z", "endTime": "2025-02-03T12:00:00Z" },
@@ -9,6 +10,7 @@
     },
     {
       "name": "Bob Smith",
+      "email": "bobsmith@momentumsolar.com",
       "grade": "B",
       "availability": [
         { "startTime": "2025-02-04T08:00:00Z", "endTime": "2025-02-04T10:30:00Z" },
@@ -17,6 +19,7 @@
     },
     {
       "name": "Charlie Davis",
+      "email": "cd@momentumsolar.com",
       "grade": "C",
       "availability": [
         { "startTime": "2025-02-02T15:00:00Z", "endTime": "2025-02-02T18:00:00Z" },
@@ -25,6 +28,7 @@
     },
     {
       "name": "Diana Lee",
+      "email": "dl@momentumsolar.com",
       "grade": "A",
       "availability": [
         { "startTime": "2025-02-05T10:00:00Z", "endTime": "2025-02-05T12:00:00Z" },
@@ -33,6 +37,7 @@
     },
     {
       "name": "Ethan Martinez",
+      "email": "em@momentumsolar.com",
       "grade": "B",
       "availability": [
         { "startTime": "2025-02-03T08:30:00Z", "endTime": "2025-02-03T11:30:00Z" },
